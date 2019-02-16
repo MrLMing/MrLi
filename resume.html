@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <style type="text/css">
+    #center{
+        background:rgb(221, 228, 221);
+        height: 400px;
+        width: 400px;
+        line-height: 100px; 
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        margin: -150px 0 0 -200px;
+        border-radius: 10% / 50%;
+        box-shadow:5px 5px 5px gray 
+    }
+    #top{
+        height: 150px;
+        width:800px;
+        left:25%;
+        top: 3.59%;
+        position: absolute;
+    }
+    #left{
+        height: 400px;
+        width: 550px;
+        top: 24.3%;
+        left: 1.2%;
+        position: absolute;
+    }
+    #right{
+        height: 400px;
+        width: 550px;
+        top: 24.3%;
+        right: 1.2%;
+        position: absolute;
+    }
+    #down{
+        height: 150px;
+        width: 800px;
+        top: 78%;
+        left: 25%;
+        position: absolute;
+    }
+    img{
+        height: 30%;
+        width: 30%;
+        left: 48%;
+        top: 50%;
+        position: absolute;
+        margin-left: -50px;
+        margin-top: -50px;
+        border-radius:  10px 100px / 120px;
+        box-shadow:5px 2px 1px gray 
+    }
+    img:hover{
+        transform: rotate(360deg);
+		transition:all 1s ;
+		animation-timing-function: linear;
+        height: 40%;
+        width: 40%;
+        top: 40%
+    }
+    #topbox{
+        text-align: center;
+        position: absolute;
+        top: 1%;
+        left:43%;
+        cursor: pointer;
+    }
+   .showbox:hover{
+        transform: rotate(360deg);
+		transition:all 1s;
+		animation-timing-function: linear;
+        color: purple;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    #leftbox{
+        top: 40%;
+        right: 75%;
+        position: absolute;
+        cursor: pointer;
+    }
+    #downbox{
+        left:43%;
+        top: 75%;
+        position: absolute;
+        cursor: pointer;
+
+    }
+    #rightbox{
+        position: absolute;
+        left:75%;
+        top: 40%;
+        cursor: pointer;
+    }
+   .content{
+       display: none;
+       border-radius: 10% / 50%;
+        box-shadow:5px 5px 5px gray;
+        background: rgb(233, 188, 188);
+
+   }
+   #text{
+       display: block;
+       text-indent: 80px;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bolder;
+   }
+   #card{
+       display: block;
+       text-indent: 50px;
+      line-height: 30px;
+      font-weight: bolder;
+      list-style: none;
+   }
+   #skill{
+       display: block;
+       text-align: center;
+       text-indent: 40px;
+       line-height: 60px;
+       list-style: none;
+       font-weight: bolder;
+       font-size: 20px;
+   }
+   #describe{
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    text-indent: 20px;
+    font-weight: bolder;
+   }
+
+    </style>
+</head>
+<body>
+    <div id="center">
+        <img src="resume.jpg" alt="">
+       <div id="topbox" class="showbox">获得证书</div>
+       <div id="leftbox"class="showbox">基本信息</div>
+       
+       <div id="rightbox"class="showbox">个人技能</div>
+       <div id="downbox"class="showbox">自我描述</div>
+    </div>
+    <div id="top" class="content" >
+        <ul id="card">
+            <li>全国普通话考试二乙</li>
+            <li>计算机二级证书</li>
+            <li>英语四级证书</li>
+            <li>英语六级证书</li>
+        </ul>
+    </div>
+    <div id="left"class="content">
+        <table id="text">
+            <tr>
+                <td>姓名：</td><td>李明飞</td>
+            </tr>
+            <tr>
+                <td>性别：</td><td>男</td>
+            </tr>
+            <tr>
+                <td>生日：</td><td>1997年12月7日</td>
+            </tr>
+            <tr>
+                    <td>专业：</td><td>网络工程</td>
+                </tr>
+                <tr>
+                        <td>学历：</td><td>四年制本科</td>
+                    </tr>
+                    <tr>
+                            <td>毕业学校：</td><td>安徽农业大学经济技术学院</td>
+                        </tr>
+                        <tr>
+                                <td>E-mail</td><td>lmf120796@163.com</td>
+                            </tr>
+                            <tr>
+                                    <td>联系电话</td><td>13637069752</td>
+                                </tr>
+        </table>
+    </div>
+    <div id="right"class="content">
+        <ul id="skill">
+            <li>掌握html知识</li>
+            <li>熟练运用css</li>
+            <li>初步掌握javascript</li>
+            <li>了解java相关知识</li>
+            <li>掌握数据库的运用</li>
+            <li>了解c语言</li>
+        </ul>
+    </div>
+    <div id="down"class="content">
+        <p id="describe">我是一个开朗光明的男孩，热爱运动，最爱运动就是篮球（大学以后就很少打了，，，）.<br>一个人做事的时候喜欢听歌，喜欢思考人生。<br>
+        看我的长相也能知道我是一个善良淳朴的农村男孩，热心肠，喜欢当和事老。<br>做事能吃苦，不怕累，能熬夜！</p>
+
+    </div>
+
+    <script type="text/javascript">
+    var cenTer=document.getElementById('center');
+    var sDiv=cenTer.getElementsByTagName('div');
+    var mDiv=document.getElementsByClassName('content');
+    for(let i=0;i<sDiv.length;i++){
+        sDiv[i].onmouseover=function(){
+            for(let i=0;i<mDiv.length;i++){
+                mDiv[i].style.display='none';
+            }
+            mDiv[i].style.display='block';
+        }
+    }
+    for(let i=0;i<sDiv.length;i++){
+        sDiv[i].onmouseleave=function(){
+            for(let i=0;i<sDiv.length;i++){
+                mDiv[i].style.display='none';
+            }
+        }
+    }
+    </script>
+</body>
+</html>

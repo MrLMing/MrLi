@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>质数判断</title>
+</head>
+<body>
+    
+    <script>
+    var num = parseInt(+prompt('请输入要判断的整数：')) ;//praseInt将用户输入的数强制转换为整数 +使返回的是number型
+       if(num<1){
+           alert("您输入的不合法！");
+       }else{
+           var flag=true;//定义一个变量为true
+           for(var i=2;i<Math.sqrt(num);i++){//通过for循环将比num小得数（1除外和本身除外）找出来
+               if(num % i ==0){//判断num是否能被1和本身除外的数整除
+                   flag=false;//如果能被整除就将flag重新赋值为false
+               }
+           }
+           if(flag){//判断flag是否为true
+               alert(num +"是质数！");
+           }else{
+               alert(num+"不是质数！");
+           }
+       }
+    </script>
+</body>
+</html>

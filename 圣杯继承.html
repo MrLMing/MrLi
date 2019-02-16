@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //继承圣杯模式的通式！！运用到闭包的作用即私有化的应用。
+var inherit = (function (){
+    var F = function (){}
+    return function (Target,Origin){
+        F.prototype = Origin.prototype;
+        Target.prototype = new F();
+        Target.prototype.constuctor = Target;
+        Target.prototype.uber = Origin.prototype;
+    }
+}());
+//例：使son继承father的原型，并且如果给son的原型添加属性，father的原型不会发生改变。
+Father.prototype.lastName = "Deng";
+function Father (){
+}
+function  Son() {
+
+}
+inherit(Son,Father);
+var son = new Son();
+var father = new Father();
+    </script>
+</body>
+</html>
