@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			header{
+				width: 100%;
+				height:6%;
+				background: white;
+				position: fixed;
+				z-index: 1;
+				
+			}
+		     /*左边导航栏样式*/
+			nav.left{
+				float: left;
+				height: 60px;
+				margin-left: 0;
+				margin-top: 10px;
+				text-decoration: none;
+			}
+			/*列表平铺样式*/
+			nav ul li{
+				float: left;
+				padding: 10px;
+				margin-left: 30px;
+				list-style: none;
+				text-align:center;
+				font-size: 1.2em;
+				font-weight: 300;
+			}
+			
+			/*右边栏*/
+			nav.right{
+				float: right;
+				margin-top: 10px;
+			}
+			.Logo{
+				width:250px;
+				height: 60px;
+				margin-left: 0px;
+				margin-bottom: 0;
+				float: left;
+			}
+			.Logo img{
+				width: 250px;
+				height: 60px;
+			}
+			/*登录注册hover动画*/
+			.denglu:hover{
+				cursor:pointer;
+				background: white;
+			}
+			.zhuce:hover{
+				cursor:pointer;
+				background: white;
+			}
+			/*自定义搜索按钮*/
+			.button{
+				display: inline-block;
+			    background: url(button_bg.jpg) repeat-x 0 0;
+			    padding: 0 2px 0 2px;
+			    text-decoration: none;
+			    color: #4b4b4b;
+			    line-height: 29px;
+			    border: 1px  #ccc;
+			    border-radius: 4px;
+			    margin-top: 22px;
+			    text-align: center;
+			    float: left;
+			    margin-top: 2px;
+			    font-size: 1.2em;
+			    font-weight: 300;
+			}
+			/*搜索区盒子样式*/
+			div.search{
+				padding: 0;
+				margin: 0;
+				display: inline-block;
+				border: 0px;
+				float: right;
+				width:300px;
+				height: 60px;
+				margin-top: 15px;
+				margin-left: 10px;
+			}
+			/*搜索框样式、大小、间距*/
+			.kuang{
+				border:0.1px;
+				border-radius:4px;
+				height: 29px;
+				width: 210px;
+			margin-top: 1px;
+			line-height: 60px;
+			float: left;
+			}
+		  
+			main{
+				width: 69%;
+				height:80%;
+				float: left;
+				overflow: hidden;
+				margin-right: 0px;
+				margin-top: 10px;
+				box-shadow: 1px 1px 1px whitesmoke;
+			}
+			section.two{
+				margin:5px 0px 5px 6px;
+				float: left;
+			}
+			section.one{
+				margin:5px 0px 5px 6px;
+				float: left;
+			}
+			.p_title{
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.jianwen{
+				font-size: 18px;
+				display: inline-block;
+				margin: 5px 5px 5px 5px;
+				margin-top: 9px;
+				color: gray;
+			}
+			/*首字母大写、加粗*/
+			.jianwen:first-letter{
+				font-size: 21px;
+				font-weight: bold;
+			}
+			/*内容栏内盒子样式*/
+			.section_box{
+				width:100%;
+				height:200px;
+				overflow: hidden;
+				
+			}
+			/*图片大小效果*/
+			.section_box img{
+				width: 100%;
+				height:100%;
+				transition:.8s;
+			}
+			.section_box img:hover{
+				cursor:pointer;
+				transform: scale(1.1,1.1);
+			}
+			/*简介板块大小、字体*/
+			.jianjie{
+				width: 100%;
+				height: 40%;
+				
+			}
+			/*图片外盒子大小、悬浮*/
+			.waibao{
+				width:30%;
+				height: 300px;   
+				float: left;
+				margin: 10px 5px 20px 10px;
+			}
+			/*图片外盒子大小、悬浮*/
+			.waitao{
+				width:30%;
+				height: 300px;
+				float: left;
+				margin: 10px 5px 20px 10px;
+			}
+			/*侧边栏样式、排版*/
+			aside{
+				width: 30%;
+				height: 703px;
+				float: right;
+				background: white;
+				margin-left: 0px;
+				margin-top: 10px;
+				box-shadow: 1px 1px 1px whitesmoke;
+			}
+			.pingpai{
+				width:100%;
+				height: 200px;
+				float: right;
+				margin-left: 0px;
+				background: white;
+			}
+			aside ul li{
+				float: left;
+				list-style: none;
+				margin-right: 25px;
+				margin-top: 15px;
+				font-size: 20px;
+			}
+			.pingpai p{
+				margin-left: 5px;
+				font-weight: bold;
+			}
+			.pingpai a{
+				text-decoration: none;
+				color: black;
+			}
+			.aside_news{
+				margin-left: 0;
+				margin-top: 200px;
+			}
+			.new{
+				width: 400px;
+				height: 110px;
+			}
+			.new_img{
+				overflow: hidden;
+				width: 120px;
+				height: 110px;
+				float:left;
+			}
+			.aside_news img{
+				transition:.8s;
+			}
+			.aside_news img:hover{
+				transform: scale(1.1,1.1);
+			}
+			.news_text{
+				float:right;
+				width: 275px;
+				color: gray;
+			}
+			.aside_news p{
+				text-align: center;
+				font-weight: bold;
+				font-size: 16px;
+				color: black;
+			}
+			.aside_news a{
+				text-decoration: none;
+				color: gray;
+			}
+			.aside_tilite{
+				margin-left: 0px;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.sleder a{ 
+			 text-decoration: none; 
+			 } 
+			.slider ul { 
+			 list-style: outside none none; 
+			 } 
+			 .slider, .slider-panel img, .slider-extra { 
+			 width: 100%; 
+			 height: 500px; 
+			 } 
+			 .slider { 
+			 text-align: center; 
+			 margin: 30px auto; 
+			 position: relative; 
+			 float: left;
+			 margin-top: 60px;
+			 } 
+			 .slider-panel, .slider-nav, .slider-pre, .slider-next { 
+			 position: absolute; 
+			 z-index: 8; 
+			 } 
+			 .slider-panel { 
+			 position: absolute; 
+			 } 
+			 .slider-panel img { 
+			 border: none; 
+			 } 
+			 .slider-extra { 
+			 position: relative; 
+			 } 
+			 .slider-nav { 
+			 margin-left: -51px; 
+			 position: absolute; 
+			 left: 50%; 
+			 bottom: 4px; 
+			 } 
+			 .slider-nav li { 
+			 background: #3e3e3e; 
+			 border-radius: 50%; 
+			 color: #fff; 
+			 cursor: pointer; 
+			 margin: 0 2px; 
+			 overflow: hidden; 
+			 text-align: center; 
+			 display: inline-block; 
+			 height: 10px; 
+			 line-height: 10px; 
+			 width: 10px; 
+			 } 
+			 .slider-nav .slider-item-selected { 
+			 background: gray;
+			 } 
+			 .slider-page a{ 
+			 background: rgba(0, 0, 0, 0.2); 
+			 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000); 
+			 color: #fff; 
+			 text-align: center; 
+			 display: block; 
+			 font-family: "simsun"; 
+			 font-size: 22px; 
+			 width: 28px; 
+			 height: 62px; 
+			 line-height: 62px; 
+			 margin-top: -31px; 
+			 position: absolute; 
+			 top: 50%; 
+			 } 
+			 .slider-page a:hover { 
+			 background: rgba(0, 0, 0, 0.4); 
+			 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000); 
+			 } 
+			 .slider-next { 
+			 left: 100%; 
+			 margin-left: -28px; 
+			 } 
+			 *{
+			 	padding: 0;
+			 		margin: 0;
+			 		}		
+			 footer {
+			line-height: 70px;
+			text-align: center;
+			float: right;
+			width: 100%;
+			font-weight: bold;
+			box-shadow:1px 1px 1px whitesmoke ;
+			}
+.he_footer { text-align: center; }
+.he_footer dl dt { height: 28px; line-height: 28px; background: #afafaf; color: #fff; }
+.he_footer dl dt a { font-weight: bold; color: #fff; }
+.he_footer dl dd { padding: 8px 0; color: #666; line-height: 2; }
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="Logo"  ">
+				<img src="xiaologo.png" width="80px" height="55px" /></div>
+			
+			
+			<!--<!--菜单列表-->
+			
+			<nav class="left">
+				<ul>
+					<a href=""><li>首页</li></a>
+					<a href=""><li>国产</li></a>
+					<a href=""><li>日系</li></a>
+					<a href=""><li>德系</li></a>
+					<a href=""><li>美系</li></a>
+					<a href=""><li>意系</li></a>
+					<a href=""><li>法系</li></a>
+				</ul>
+			</nav>
+			<div class="search">
+				<!--搜索框-->
+				<form action="" method="post" class="seach_niu">
+					<input class="kuang" type="text" placeholder="可查找与车相关信息" />
+					<input class="button"  type="button"  value="搜索"/>
+				</form>
+			</div>
+			<!--登录，注册区域-->
+			<nav class="right">
+				<ul>
+					<li class="denglu">登录</li>
+					<li class="zhuce">注册</li>
+				</ul>
+			</nav>
+		</header>
+		<!--内容主体-->
+		<!--幻灯片部分-->
+		<section class="huan">
+			<div class="slider"> 
+				 <ul class="slider-main"> 
+				  <li class="slider-panel"> 
+				<img src="hdp3.jpg">
+				  </li> 
+				  <li class="slider-panel"> 
+				 <img src="hdp4.jpg">
+				  </li> 
+				  <li class="slider-panel"> 
+				 <img src="hdp8.png">
+				  </li> 
+				  <li class="slider-panel"> 
+				<img src="hdp4.jpg">
+				  </li> 
+				 </ul> 
+				 <div class="slider-extra"> 
+				  <ul class="slider-nav"> 
+				  <li class="slider-item"></li> 
+				  <li class="slider-item"></li> 
+				  <li class="slider-item"></li> 
+				  <li class="slider-item"></li> 
+				  </ul> 
+				  <div class="slider-page"> 
+				  <a class="slider-pre" href="javascript:;;"><</a> 
+				  <a class="slider-next" href="javascript:;;">></a> 
+				  </div> 
+				 </div> 
+				 </div> 
+				 </section>
+		<main>
+			<p class="p_title">热门车型：</p>
+			<!--内容第一个模块-->
+			<section class="one">
+				<!--最外层大盒子-->
+				<div class="waibao">   
+					<!--作为装图片的盒子-->
+				<div class="section_box"> 
+					<a href="http://www.lynkco.com.cn/"><img src="lingke.jpg"/> </a>                                                  
+				</div>
+				<!--简介区-->
+				<div class="jianjie ">
+					<p class="jianwen">吉利领克 国产也能如此Beautiful!!</p>
+				</div>
+				</div>
+				
+				<div class="waibao">
+				   <div class="section_box">
+					<a href="http://www.ghac.cn/"><img src="yage.jpg"/></a>
+				    </div>
+				   <div class="jianjie">
+					<p class="jianwen">本田雅阁（英语：Honda Accord、日语：アコード），最美雅阁不吹不黑。</p>
+				    </div>
+				</div>
+				
+				<div class="waibao">
+						<div class="section_box">
+					<a href="http://www.audi.cn"><img src="dazhong.png"/></a>
+				</div>
+				<div class="jianjie">
+				<p class="jianwen">大众CC 2018款的掀背撩起了我的心！</p>
+				</div>
+				</div>
+			
+			</section>
+			<section class="two">
+				<div class="waitao">
+					<div class="section_box">
+					<a href="http://www.ford-mustang.com.cn/"><img src="mustang.png"/></a>
+				</div>
+				<div class="jianjie">
+				<p class="jianwen">福特野马5.0的才是野马，2.3的只是小驴？</p>
+				</div>
+				</div>
+				
+				<div class="waitao">
+					<div class="section_box">
+					<a href="https://www.maserati.com"></a><img src="masha.jpg"/>
+				</div>
+				<div class="jianjie">
+				<p class="jianwen">玛莎拉蒂（Maserati）的海神三叉戟迷倒多少男同胞！</p>
+				</div>
+				</div>
+				
+				<div class="waitao">
+					<div class="section_box">
+					<a href="http://www.dongfeng-citroen.com.cn/"><img src="xuetielong.jpg"/></a>
+				</div>
+				<div class="jianjie">
+				<p class="jianwen">东风雪铁龙的跑车如此拉风！</p>
+				</div>
+				</div>
+			</section>
+		</main>
+		<aside>
+			<div class="pingpai">
+				<p>热门品牌：</p>
+				<ul class="pingpai_name">
+					<li><a href="http://www.bmw.com.cn">宝马</a></li>
+					<li><a href="http://www.mercedes-benz.com.cn">奔驰</a></li>
+					<li> <a href="http://www.audi.cn">奥迪</a></li>
+					<li><a href="http://www.cadillac.com.cn/">凯迪拉克</a></li>
+					<li><a href="http://www.toyota.com.cn/">丰田</a></li>
+					<li><a href="http://www.honda.com.cn/">本田</a></li>
+					<li><a href="http://www.buick.com.cn/">别克</a></li>
+					<li><a href="http://www.chevrolet.com.cn">雪佛兰</a></li>
+					<li><a href="http://www.mazda.com.cn/">马自达</a></li>
+					<li><a href="http://www.haval.com.cn/">哈佛</a></li>
+           			</div>	
+           			<div class="aside_news">
+           				<span class="aside_tilite">
+           					车坛前沿：
+           				</span>
+           				<div class="new">
+           				<div class="new_img">
+           					<a href=""><img src="aside_new_img.png" width="120px" height="110px"/></a></div>
+           					<div class="news_text">
+           						<a href=""><p>大众计划2021年实现全自动驾驶车型</p></a> <br /><a href="">近日，据外媒报道，大众计划在谷歌Waymo的基础上，于今年晚些时候......... </a>           </div>
+           				
+           				</div>
+           				<div class="new">
+           				<div class="new_img">
+           					<a href=""><img src="aside_new_img2.jpg" width="120px" height="110px"/></a></div>
+           					<div class="news_text">
+           						<a href=""><p>新前脸/新动力&nbsp;新款Macan巴黎...</p></a> <br /><a href="">日前，据海外媒体报道称，保时捷新款Macan将于今年10月举行的巴黎车展首次亮相........ </a>           </div>
+           					
+           				</div>
+           				<div class="new">
+           				<div class="new_img">
+           					<a href=""><img src="aside_new_img3.jpg" width="120px" height="110px"/></a>	</div>
+           					<div class="news_text">
+           						<a href=""><p>中国将对美28种汽车商品加征25%关税</p></a> <br /><a href=""> 6月16日，国务院关税税则委员会发布关于对原产于美国500亿美元进口商品加征关税的公告.... </a>           </div>
+           			
+           				</div>
+           				<div class="new">
+           				<div class="new_img">
+           					<a href=""><img src="aside_new_img4.jpg" width="120px" height="110px"/></a></div>
+           					<div class="news_text">
+           						<a href=""><p>或命名600LT 迈凯伦新车型谍照曝光</p></a> <br /><a href=""> 前不久迈凯伦公布了旗下新车型的预告图，而近日，有海外媒体曝光了这款新车的测试谍照.... </a>           </div>
+           				
+           				</div>
+           			</div>
+			</aside>
+			<footer>
+				<div class="he_footer">
+  <dl>
+    <dt><a href="#">关于我们</a>　||　<a href="#">汽车资讯</a>　||　<a href="#">联系我们</a>　||　<a href="#">友情链接</a>　||　<a href="#">反馈问题</a>　||　<a href="#">广告合作</a></dt>
+    <dd>Copyright &copy; 2017- 2018 lmf.cn   All Rights Reserved<br />
+      xx公司  版权所有  </dd>
+  </dl>
+				</div>
+</footer>
+		<script type="text/javascript"> 
+ $(document).ready(function() { 
+ var length, 
+  currentIndex = 0, 
+  interval, 
+  hasStarted = false, //是否已经开始轮播 
+  t = 3000; //轮播时间间隔 
+ length = $('.slider-panel').length; 
+ //将除了第一张图片隐藏 
+ $('.slider-panel:not(:first)').hide(); 
+ //将第一个slider-item设为激活状态 
+ $('.slider-item:first').addClass('slider-item-selected'); 
+ //隐藏向前、向后翻按钮 
+ $('.slider-page').hide(); 
+ //鼠标上悬时显示向前、向后翻按钮,停止滑动，鼠标离开时隐藏向前、向后翻按钮，开始滑动 
+ $('.slider-panel, .slider-pre, .slider-next').hover(function() { 
+  stop(); 
+  $('.slider-page').show(); 
+ }, function() { 
+  $('.slider-page').hide(); 
+  start(); 
+ }); 
+ $('.slider-item').hover(function(e) { 
+  stop(); 
+  var preIndex = $(".slider-item").filter(".slider-item-selected").index(); 
+  currentIndex = $(this).index(); 
+  play(preIndex, currentIndex); 
+ }, function() { 
+  start(); 
+ }); 
+ $('.slider-pre').unbind('click'); 
+ $('.slider-pre').bind('click', function() { 
+  pre(); 
+ }); 
+ $('.slider-next').unbind('click'); 
+ $('.slider-next').bind('click', function() { 
+  next(); 
+ }); 
+ /** 
+  * 向前翻页 
+  */
+ function pre() { 
+  var preIndex = currentIndex; 
+  currentIndex = (--currentIndex + length) % length; 
+  play(preIndex, currentIndex); 
+ } 
+ /** 
+  * 向后翻页 
+  */
+ function next() { 
+  var preIndex = currentIndex; 
+  currentIndex = ++currentIndex % length; 
+  play(preIndex, currentIndex); 
+ } 
+ /** 
+  * 从preIndex页翻到currentIndex页 
+  * preIndex 整数，翻页的起始页 
+  * currentIndex 整数，翻到的那页 
+  */
+ function play(preIndex, currentIndex) { 
+  $('.slider-panel').eq(preIndex).fadeOut(500) 
+  .parent().children().eq(currentIndex).fadeIn(1000); 
+  $('.slider-item').removeClass('slider-item-selected'); 
+  $('.slider-item').eq(currentIndex).addClass('slider-item-selected'); 
+ } 
+ /** 
+  * 开始轮播 
+  */
+ function start() { 
+  if(!hasStarted) { 
+  hasStarted = true; 
+  interval = setInterval(next, t); 
+  } 
+ } 
+ /** 
+  * 停止轮播 
+  */
+ function stop() { 
+  clearInterval(interval); 
+  hasStarted = false; 
+ } 
+ //开始轮播 
+ start(); 
+ }); 
+</script> 
+	</body>
+</html>
